@@ -10,6 +10,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
+const choices = require("./lib/inquirer.choices.js");
+
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
@@ -47,3 +49,4 @@ function writeToFile(fileName, data) {
 function exit () {
   prompt.ui.close();
 };
+
