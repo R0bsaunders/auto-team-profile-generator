@@ -97,6 +97,13 @@ const choices = {
     
                 return validator(github);
             }
+        },
+        {
+            type: 'list',
+            name: 'addAnother',
+            message: "Do you want to add another employee?",
+            choices: addEmployees
+
         }
     ],
 
@@ -134,11 +141,18 @@ const choices = {
         {
             type: 'input',
             name: 'school',
-            message: "What is the intern's GitHub username?",
+            message: "What school does the intern attend?",
             validate: function(school) {
     
                 return validator(school);
             }
+        },
+        {
+            type: 'list',
+            name: 'addAnother',
+            message: "Do you want to add another employee?",
+            choices: addEmployees
+
         }
     ] 
 };

@@ -26,18 +26,10 @@ function addManager() {
 
     .then((answers)=> {
 
-        const employees = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-        console.log(employees);
+        employees.push(new Manager(answers.name, answers.id, answers.email, answers.officeNumber));
 
-        if(answers.addAnother === 'Engineer'){
-            addEngineer();
-
-        } else if(answers.addAnother === 'Intern') {
-            addIntern();
-        };
-
+        checkAdd(answers);
      });
-
 };
 
 function addEngineer() {
@@ -48,46 +40,59 @@ function addEngineer() {
 
     .then((answers)=> {
 
-        const employees = new Engineer (answers.name, answers.id, answers.email, answers.github)
-        console.log(employees);
-        // writeToFile("answers.txt", answers);
+        employees.push(new Engineer (answers.name, answers.id, answers.email, answers.github));
 
+        checkAdd(answers);
     });
-
 };
 
 function addIntern() {
+
     closeFunction();
 
     inquirer.prompt(choices.intern)
 
     .then((answers)=> {
 
-        const employees = new Intern (answers.name, answers.id, answers.email, answers.school)
-        console.log(employees);
-        // writeToFile("answers.txt", answers);
+        employees.push(new Intern (answers.name, answers.id, answers.email, answers.school));
 
+        checkAdd(answers);
     });
 };
 
 // function to write answers to HTML
 function writeToFile(fileName, data) {
 
-        console.log(data);
-//   fs.writeFile(`./assets/${fileName}`, data, (err) =>err ? console.log(err) : console.log(`Answers stored in a new file called ${fileName}`));
+  fs.writeFile(`../assets/${fileName}`, data, (err) =>err ? console.log(err) : console.log(`Answers stored in a new file called ${fileName}`));
 
 };
 
+// Exit the inquirer prompt
 function closeFunction(){
+
     process.stdin.on('keypress', (_, key) => {
+
         if (key.name === "escape") {
-          exit();
+            prompt.ui.close();
+
         };
     });
 };
 
-// Exit the inquirer prompt
-function exit () {
-  prompt.ui.close();
-};
+// Function to check if user wants to add another employee
+function checkAdd(answers) {
 
+    if(answers.addAnother === 'Engineer'){
+        addEngineer();
+
+    } else if(answers.addAnother === 'Intern') {
+        addIntern();
+
+    } else {
+        const exportEmployees = render(employees);
+        writeToFile("team.html", exportEmployees);
+    }
+
+    console.log(employees);
+    
+};
