@@ -1,4 +1,12 @@
-// array of questions for user
+// Array of choices for user if they want to add a new employee
+const addEmployees = 
+    [
+        'Engineer',
+        'Intern',
+        'Finish'
+    ];
+
+// array of questions for Manager, Engineer and Intern 
 const choices = {
     manager: [
         {
@@ -39,6 +47,14 @@ const choices = {
     
                 return validator(office);
             }
+        },
+
+        {
+            type: 'list',
+            name: 'addAnother',
+            message: "Do you want to add another employee?",
+            choices: addEmployees
+
         }
     ],
 
@@ -126,7 +142,6 @@ const choices = {
         }
     ] 
 };
-
 
 
 
