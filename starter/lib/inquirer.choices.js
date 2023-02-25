@@ -1,51 +1,87 @@
 // array of questions for user
-const choices = [
-    {
-        type: 'input',
-        name: 'name',
-        message: "What is the manager's name?",
-        validate: function(manager) {
-
-            return validator(manager);
-        }
-    },
+const choices = 
 
     {
-        type: 'input',
-        name: 'id',
-        message: "What is the manager's ID?",
-        validate: function(id) {
+        manager: [
+            {
+                type: 'input',
+                name: 'name',
+                message: "What is the manager's name?",
+                validate: function(name) {
+        
+                    return validator(name);
+                }
+            },
+        
+            {
+                type: 'input',
+                name: 'id',
+                message: "What is the manager's ID?",
+                validate: function(id) {
+        
+                    return validator(id);
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is the manager's email address?",
+                validate: function(email) {
+        
+                    return validator(email);
+                }
+            },
+            {
+                type: 'input',
+                name: 'officeNumber',
+                message: "What is the manager's Office Number?",
+                validate: function(office) {
+        
+                    return validator(office);
+                }
+            }
+        ],
 
-            return validator(id);
-        }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: "What is the manager's email address?",
-        validate: function(email) {
-
-            return validator(email);
-        }
-    },
-    {
-        type: 'input',
-        name: 'officeNumber',
-        message: "What is the manager's Office Number?",
-        validate: function(office) {
-
-            return validator(office);
-        }
-    }
-];
-
-
-
-
-
-
-
-
+        engineer: [
+            {
+                type: 'input',
+                name: 'name',
+                message: "What is the engineer's name?",
+                validate: function(name) {
+        
+                    return validator(name);
+                }
+            },
+        
+            {
+                type: 'input',
+                name: 'id',
+                message: "What is the engineer's ID?",
+                validate: function(id) {
+        
+                    return validator(id);
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is the engineer's email address?",
+                validate: function(email) {
+        
+                    return validator(email);
+                }
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: "What is the engineer's GitHub username?",
+                validate: function(github) {
+        
+                    return validator(github);
+                }
+            }
+        ],
+    };
 
 
 

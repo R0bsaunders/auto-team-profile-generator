@@ -28,7 +28,7 @@ function init() {
     };
   });
 
-  inquirer.prompt(choices)
+  inquirer.prompt(choices.engineer)
   
   .then((answers)=> {
 
