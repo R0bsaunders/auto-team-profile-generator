@@ -54,7 +54,6 @@ const choices = {
             name: 'addAnother',
             message: "Do you want to add another employee?",
             choices: addEmployees
-
         }
     ],
 
@@ -102,8 +101,7 @@ const choices = {
             type: 'list',
             name: 'addAnother',
             message: "Do you want to add another employee?",
-            choices: addEmployees
-
+            choices: addEmployee
         }
     ],
 
@@ -147,34 +145,33 @@ const choices = {
                 return validator(school);
             }
         },
-        
+
         {
             type: 'list',
             name: 'addAnother',
             message: "Do you want to add another employee?",
             choices: addEmployees
-
         }
     ] 
 };
 
 // Function to check for empty answers and return message prompting user to type something
 function validator(input) {
-    return (!input ? `Please enter a value` : true);
 
+    return (!input ? `Please enter a value` : true);
 };
 
 // Function to check for non integer
 function isNumber(input) {
-    return (!Number.isInteger(parseInt(input)) ? `Please enter a number` : true);
 
+    return (!Number.isInteger(parseInt(input)) ? `Please enter a number` : true);
 };
 
 // Function to validate email address format
 
 function validateEmail(mail) {
-  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) ? true : `You have entered an invalid email address!`;
 
+  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) ? true : `You have entered an invalid email address!`;
 };
 
 module.exports = choices;

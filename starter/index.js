@@ -4,12 +4,10 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 const choices = require("./lib/inquirer.choices.js");
 
-let employees = [];
+let employeeList = [];
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
@@ -19,14 +17,13 @@ addManager();
 // function to initialize program
 function addManager() {
 
-  // close inquirer input if user press "escape" key
     closeFunction();
 
     inquirer.prompt(choices.manager)
 
     .then((answers)=> {
 
-        employees.push(new Manager(answers.name, answers.id, answers.email, answers.officeNumber));
+        employeeList.push(new Manager(answers.name, answers.id, answers.email, answers.officeNumber));
 
         checkAdd(answers);
      });
@@ -40,7 +37,7 @@ function addEngineer() {
 
     .then((answers)=> {
 
-        employees.push(new Engineer (answers.name, answers.id, answers.email, answers.github));
+        employeeList.push(new Engineer (answers.name, answers.id, answers.email, answers.github));
 
         checkAdd(answers);
     });
@@ -54,7 +51,7 @@ function addIntern() {
 
     .then((answers)=> {
 
-        employees.push(new Intern (answers.name, answers.id, answers.email, answers.school));
+        employeeList.push(new Intern (answers.name, answers.id, answers.email, answers.school));
 
         checkAdd(answers);
     });
@@ -73,6 +70,7 @@ function closeFunction(){
     process.stdin.on('keypress', (_, key) => {
 
         if (key.name === "escape") {
+            
             prompt.ui.close();
 
         };
@@ -83,16 +81,17 @@ function closeFunction(){
 function checkAdd(answers) {
 
     if(answers.addAnother === 'Engineer'){
+
         addEngineer();
 
     } else if(answers.addAnother === 'Intern') {
+
         addIntern();
 
     } else {
-        const exportEmployees = render(employees);
-        writeToFile("team.html", exportEmployees);
-    }
 
-    console.log(employees);
-    
+        const exportEmployees = render(employeeList);
+        
+        writeToFile("team.html", exportEmployees);
+    };
 };
