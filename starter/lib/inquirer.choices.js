@@ -1,5 +1,5 @@
 // Array of choices for user if they want to add a new employee
-const addEmployees = 
+const employeeTypes = 
     [
         'Engineer',
         'Intern',
@@ -53,7 +53,7 @@ const choices = {
             type: 'list',
             name: 'addAnother',
             message: "Do you want to add another employee?",
-            choices: addEmployees
+            choices: employeeTypes
         }
     ],
 
@@ -101,7 +101,7 @@ const choices = {
             type: 'list',
             name: 'addAnother',
             message: "Do you want to add another employee?",
-            choices: addEmployee
+            choices: employeeTypes
         }
     ],
 
@@ -150,7 +150,7 @@ const choices = {
             type: 'list',
             name: 'addAnother',
             message: "Do you want to add another employee?",
-            choices: addEmployees
+            choices: employeeTypes
         }
     ] 
 };
