@@ -25,7 +25,7 @@ const choices = {
             message: "What is the manager's ID?",
             validate: function(id) {
     
-                return validator(id);
+                return isNumber(id);
             }
         },
 
@@ -35,7 +35,7 @@ const choices = {
             message: "What is the manager's email address?",
             validate: function(email) {
     
-                return validator(email);
+                return validateEmail(email);
             }
         },
 
@@ -45,7 +45,7 @@ const choices = {
             message: "What is the manager's Office Number?",
             validate: function(office) {
     
-                return validator(office);
+                return isNumber(office);
             }
         },
 
@@ -75,7 +75,7 @@ const choices = {
             message: "What is the engineer's ID?",
             validate: function(id) {
     
-                return validator(id);
+                return isNumber(id);
             }
         },
 
@@ -85,7 +85,7 @@ const choices = {
             message: "What is the engineer's email address?",
             validate: function(email) {
     
-                return validator(email);
+                return validateEmail(email);
             }
         },
         
@@ -124,7 +124,7 @@ const choices = {
             message: "What is the intern's ID?",
             validate: function(id) {
     
-                return validator(id);
+                return isNumber(id);
             }
         },
 
@@ -134,7 +134,7 @@ const choices = {
             message: "What is the intern's email address?",
             validate: function(email) {
     
-                return validator(email);
+                return validateEmail(email);
             }
         },
         
@@ -147,6 +147,7 @@ const choices = {
                 return validator(school);
             }
         },
+        
         {
             type: 'list',
             name: 'addAnother',
@@ -157,13 +158,22 @@ const choices = {
     ] 
 };
 
-
-
-
-
 // Function to check for empty answers and return message prompting user to type something
 function validator(input) {
     return (!input ? `Please enter a value` : true);
+
+};
+
+// Function to check for non integer
+function isNumber(input) {
+    return (!Number.isInteger(parseInt(input)) ? `Please enter a number` : true);
+
+};
+
+// Function to validate email address format
+
+function validateEmail(mail) {
+  return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) ? true : `You have entered an invalid email address!`;
 
 };
 

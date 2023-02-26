@@ -63,7 +63,7 @@ function addIntern() {
 // function to write answers to HTML
 function writeToFile(fileName, data) {
 
-  fs.writeFile(`../assets/${fileName}`, data, (err) =>err ? console.log(err) : console.log(`Answers stored in a new file called ${fileName}`));
+  fs.writeFile(`../assets/${fileName}`, data, (err) =>err ? console.log(err) : console.log(`Your team has been created called: ${fileName}`));
 
 };
 
