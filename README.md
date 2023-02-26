@@ -15,13 +15,17 @@
 ## Description
 Using this simple little tool, you will be able to create an HTML webpage that displays a team of employees and their manager. Rather than using spreadsheets, simply enter the tam members and an easy to understand HTML page will be generated with each employee, their title and other details about them. The outputted html file will look like this:
 
-[Command-line team generator screenshot](./assets/images/app-screenshot.jpg)
+![Command-line team generator screenshot](./assets/images/app-screenshot.jpg)
 
 ## Installation
 To install this app, simply download the files to your system and put them where you need them. This can be on your local machine or a server.
 
 ## Usage
 To use, open your terminal and navigate to the root folder. Simply type 'node index.js' to launch the generator. You will be presented with a series of questions, follow them one-by-one until you are presented with the success message and a new team.html file is automatically added to the assets folder. You may wish to make sure the assets folder does not already contain a previously generated team.html file. It doesn't matter if it does because the generator will only ever overwrite the contents of the pre-existing file anyway.
+
+The repository can be found here:
+
+https://github.com/R0bsaunders/auto-team-profile-generator
 
 ## Contributors
 To contribute to the app, please send me an email.
