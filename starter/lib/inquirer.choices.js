@@ -1,157 +1,98 @@
 // Array of choices for user if they want to add a new employee
-const employeeTypes = 
-    [
-        'Engineer',
-        'Intern',
-        'Finish'
-    ];
+const employeeTypes = ['Engineer', 'Intern', 'Finish and create team'];
 
-// array of questions for Manager, Engineer and Intern 
+// The following variables are objects containing the question data for the prompts. As all employee types share name, id and email, this is compliant with DRY principle
+const addEmployeeQuestion = {
+    type: 'list',
+    name: 'addAnother',
+    message: "Do you want to add another employee?",
+    choices: employeeTypes
+};
+
+const nameQuestion = {
+    type: 'input',
+    name: 'name',
+    message: "What is the name?",
+    validate: function(name) {
+
+        return validator(name);
+    }
+};
+
+const idQuestion = {
+    type: 'input',
+    name: 'id',
+    message: "What is their ID?",
+    validate: function(id) {
+
+        return isNumber(id);
+    }
+};
+
+const emailQuestion =  {
+    type: 'input',
+    name: 'email',
+    message: "What is their email address?",
+    validate: function(email) {
+
+        return validateEmail(email);
+    }
+};
+
+const officeNumberQuestion = {
+    type: 'input',
+    name: 'officeNumber',
+    message: "What is the manager's Office Number?",
+    validate: function(office) {
+
+        return isNumber(office);
+    }
+};
+
+const githubQuestion = {
+    type: 'input',
+    name: 'github',
+    message: "What is the engineer's GitHub username?",
+    validate: function(github) {
+
+        return validator(github);
+    }
+};
+
+const schoolQuestion = {
+    type: 'input',
+    name: 'school',
+    message: "What school does the intern attend?",
+    validate: function(school) {
+
+        return validator(school);
+    }
+};
+
+// inquirer prompt sequence
 const choices = {
     manager: [
-        {
-            type: 'input',
-            name: 'name',
-            message: "What is the manager's name?",
-            validate: function(name) {
-    
-                return validator(name);
-            }
-        },
-    
-        {
-            type: 'input',
-            name: 'id',
-            message: "What is the manager's ID?",
-            validate: function(id) {
-    
-                return isNumber(id);
-            }
-        },
-
-        {
-            type: 'input',
-            name: 'email',
-            message: "What is the manager's email address?",
-            validate: function(email) {
-    
-                return validateEmail(email);
-            }
-        },
-
-        {
-            type: 'input',
-            name: 'officeNumber',
-            message: "What is the manager's Office Number?",
-            validate: function(office) {
-    
-                return isNumber(office);
-            }
-        },
-
-        {
-            type: 'list',
-            name: 'addAnother',
-            message: "Do you want to add another employee?",
-            choices: employeeTypes
-        }
+        nameQuestion,
+        idQuestion,
+        emailQuestion,
+        officeNumberQuestion,
+        addEmployeeQuestion
     ],
 
     engineer: [
-        {
-            type: 'input',
-            name: 'name',
-            message: "What is the engineer's name?",
-            validate: function(name) {
-    
-                return validator(name);
-            }
-        },
-    
-        {
-            type: 'input',
-            name: 'id',
-            message: "What is the engineer's ID?",
-            validate: function(id) {
-    
-                return isNumber(id);
-            }
-        },
-
-        {
-            type: 'input',
-            name: 'email',
-            message: "What is the engineer's email address?",
-            validate: function(email) {
-    
-                return validateEmail(email);
-            }
-        },
-        
-        {
-            type: 'input',
-            name: 'github',
-            message: "What is the engineer's GitHub username?",
-            validate: function(github) {
-    
-                return validator(github);
-            }
-        },
-        {
-            type: 'list',
-            name: 'addAnother',
-            message: "Do you want to add another employee?",
-            choices: employeeTypes
-        }
+        nameQuestion,
+        idQuestion,
+        emailQuestion,
+        githubQuestion,
+        addEmployeeQuestion
     ],
 
     intern: [
-        {
-            type: 'input',
-            name: 'name',
-            message: "What is the intern's name?",
-            validate: function(name) {
-    
-                return validator(name);
-            }
-        },
-    
-        {
-            type: 'input',
-            name: 'id',
-            message: "What is the intern's ID?",
-            validate: function(id) {
-    
-                return isNumber(id);
-            }
-        },
-
-        {
-            type: 'input',
-            name: 'email',
-            message: "What is the intern's email address?",
-            validate: function(email) {
-    
-                return validateEmail(email);
-            }
-        },
-        
-        {
-            type: 'input',
-            name: 'school',
-            message: "What school does the intern attend?",
-            validate: function(school) {
-    
-                return validator(school);
-            }
-        },
-
-        {
-            type: 'list',
-            name: 'addAnother',
-            message: "Do you want to add another employee?",
-            choices: employeeTypes
-        }
+        nameQuestion,
+        idQuestion,
+        emailQuestion,
+        schoolQuestion,
+        addEmployeeQuestion
     ] 
 };
 
