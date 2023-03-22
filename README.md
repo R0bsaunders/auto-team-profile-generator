@@ -20,7 +20,7 @@ Using this simple little tool, you will be able to create an HTML webpage that d
 ## Installation
 To install this app, simply download the files to your system and put them where you need them. This can be on your local machine or a server. 
 
-1. Open your terminal and navigate to the project foot folder
+1. Open your terminal and navigate to the project Root folder
 2. Type npm i to install all required packages
 3. Once install is complete, make sure the package.json file contains the following code:
     {
@@ -44,7 +44,11 @@ Check that all tests pass by:
 
 ## Using the Team Page Generator
 
-To use, open your terminal and navigate to the root folder. Simply type 'node index.js' to launch the generator. You will be presented with a series of questions, follow them one-by-one until you are presented with the success message and a new team.html file is automatically added to the assets folder. You may wish to make sure the assets folder does not already contain a previously generated team.html file. It doesn't matter if it does because the generator will only ever overwrite the contents of the pre-existing file anyway.
+To generate a team:
+1. Open your terminal and navigate to the 'starter' folder - note this is very important!
+2. Simply type 'node index.js' to launch the generator.
+
+You will be presented with a series of questions, follow them one-by-one until you are presented with the success message and a new team.html file is automatically added to the assets folder. You may wish to make sure the assets folder does not already contain a previously generated team.html file. It doesn't matter if it does because the generator will only ever overwrite the contents of the pre-existing file anyway.
 
 The repository can be found here:
 
