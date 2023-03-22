@@ -6,7 +6,8 @@
 
 - [Project Description](#Description)
 - [Installation](#Installation)
-- [Usage](#Usage)
+- [Using the test (Jest) system](#UsingTests)
+- [Using the Team Generator](#UsingGenerator)
 - [License](#License)
 - [Contributing](#Contributing)
 - [Testing](#Testing)
@@ -33,7 +34,7 @@ To install this app, simply download the files to your system and put them where
     }
     }
 
-## Using the test (Jest) system
+## UsingTests
 
 Check that all tests pass by:
 1. Open your terminal to the project root folder
@@ -42,7 +43,7 @@ Check that all tests pass by:
 ![Example of test passing in the CLI](./assets/images/test-pass.png)
 
 
-## Using the Team Page Generator
+## UsingGenerator
 
 To generate a team:
 1. Open your terminal and navigate to the 'starter' folder - note this is very important!
