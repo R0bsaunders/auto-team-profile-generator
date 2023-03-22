@@ -18,9 +18,32 @@ Using this simple little tool, you will be able to create an HTML webpage that d
 ![Command-line team generator screenshot](./assets/images/app-screenshot.jpg)
 
 ## Installation
-To install this app, simply download the files to your system and put them where you need them. This can be on your local machine or a server.
+To install this app, simply download the files to your system and put them where you need them. This can be on your local machine or a server. 
 
-## Usage
+1. Open your terminal and navigate to the project foot folder
+2. Type npm i to install all required packages
+3. Once install is complete, make sure the package.json file contains the following code:
+    {
+    "devDependencies": {
+        "inquirer": "^6.3.1",
+        "jest": "^29.5.0"
+    },
+    "scripts": {
+        "test": "jest"
+    }
+    }
+
+## Using the test (Jest) system
+
+Check that all tests pass by:
+1. Open your terminal to the project root folder
+2. Type npm test to check all tests pass. If they do it should look like this:
+
+![Example of test passing in the CLI](./assets/images/test-pass.png)
+
+
+## Using the Team Page Generator
+
 To use, open your terminal and navigate to the root folder. Simply type 'node index.js' to launch the generator. You will be presented with a series of questions, follow them one-by-one until you are presented with the success message and a new team.html file is automatically added to the assets folder. You may wish to make sure the assets folder does not already contain a previously generated team.html file. It doesn't matter if it does because the generator will only ever overwrite the contents of the pre-existing file anyway.
 
 The repository can be found here:
